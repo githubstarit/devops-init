@@ -1,16 +1,18 @@
-function exe_cmd() {
-echo $1
-eval $1
-    }
+function exe_cmd()
+{
+    echo $1
+    eval $1
+}
 
-    function ensure_dir()
-    {
-        if [ ! -d $1 ]; then
-            exe_cmd "mkdir -p $1"
-        fi
-    }
+function ensure_dir()
+{
+    if [ ! -d $1 ]; then
+        exe_cmd "mkdir -p $1"
+    fi
+}
 
-    function intall_basic_tools() {
+function intall_basic_tools()
+{
     if [ ! -d ~/git/work-anywhere/ ]; then
         exe_cmd "cd ~/git"
         exe_cmd "git clone https://github.com/githubstarit/work-anywhere.git"
